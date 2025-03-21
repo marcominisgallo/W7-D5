@@ -37,7 +37,7 @@ const getWines = function () {
                 <p class="card-text">${wine.brand}</p>
                 <p class="card-text">${wine.description}</p>
                 <p class="card-text">${wine.price}€</p>
-                <a href="./DescriptionP.html?id=${wine._id}" class="btn btn-primary">Vai ai dettagli</a>
+                <a href="./DescriptionP.html?id=${wine._id}" class="btn" style="background-color: #ff5db2">Vai ai dettagli</a>
               </div>
             </div>
           </div>
