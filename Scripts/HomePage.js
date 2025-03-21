@@ -35,7 +35,7 @@ const getWines = function () {
                 <h5 class="card-title">${wine.name}</h5>
                 <p class="card-text">${wine.description}</p>
                 <p class="card-text">${wine.price}€</p>
-                <a href="./details.html?id=${wine._id}" class="btn btn-primary">Vai ai dettagli</a>
+                <a href="./details.html?id=${wine.id}" class="btn btn-primary">Vai ai dettagli</a>
               </div>
             </div>
           </div>
