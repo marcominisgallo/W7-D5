@@ -29,14 +29,14 @@ const getWines = function () {
       const row = document.getElementById("allWine");
       data.forEach((wine) => {
         row.innerHTML += `
-          <div class="col col-12 col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-              <img src="${wine.imageUrl}" alt="Wine-Pic" />
-              <div class="card-body">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex g-4">
+            <div class="card rounded-3 d-flex flex-column">
+              <img src="${wine.imageUrl}" alt="Wine-Pic" class="rounded-top-3"/>
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">${wine.name}</h5>
                 <p class="card-text">${wine.brand}</p>
-                <p class="card-text">${wine.description}</p>
-                <p class="card-text">${wine.price}€</p>
+                <p class="card-text d-flex flex-grow-1">${wine.description}</p>
+                <p class="card-text mt-1">${wine.price}€</p>
                 <a href="./DescriptionP.html?id=${wine._id}" class="btn" style="background-color: #ff5db2">Vai ai dettagli</a>
               </div>
             </div>
