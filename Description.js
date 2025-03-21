@@ -43,27 +43,33 @@ const getWineDetails = function () {
 };
 
 const editWine = function () {
-  location.assign("../BO.html?id=" + wineId);
+  const confirmation = confirm("Sei sicuro di voler modificare questo vino?");
+  if (confirmation) {
+    location.assign("../BO.html?id=" + wineId);
+  }
 };
 
 const deleteWine = function () {
-  fetch(winesURL + "/" + wineId, {
-    method: "DELETE",
-    headers: {
-      Authorization: ApiKey,
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("VINO ELIMINATO");
-        location.assign("./HomeP.html");
-      } else {
-        throw new Error("eliminazione NON andata a buon fine!");
-      }
+  const confirmation = confirm("Sei sicuro di voler eliminare questo vino?");
+  if (confirmation) {
+    fetch(winesURL + "/" + wineId, {
+      method: "DELETE",
+      headers: {
+        Authorization: ApiKey,
+      },
     })
-    .catch((err) => {
-      console.log("ERRORE NELLA CANCELLAZIONE", err);
-    });
+      .then((response) => {
+        if (response.ok) {
+          alert("VINO ELIMINATO");
+          location.assign("./HomeP.html");
+        } else {
+          throw new Error("eliminazione NON andata a buon fine!");
+        }
+      })
+      .catch((err) => {
+        console.log("ERRORE NELLA CANCELLAZIONE", err);
+      });
+  }
 };
 
 getWineDetails();
