@@ -10,13 +10,14 @@ const getWines = function () {
   const winesURL = "https://striveschool-api.herokuapp.com/api/product/";
 
   fetch(winesURL, {
+    method: "GET",
     headers: {
       Authorization: ApiKey,
     },
   })
     .then((response) => {
       if (response.ok) {
-        return response.json;
+        return response.json();
       } else {
         throw new Error("La risposta non è andata a buon fine");
       }
@@ -25,17 +26,18 @@ const getWines = function () {
       nascondiCaricam();
       console.log("DATA", data);
 
-      const row = document.getElementById("allWine-row");
+      const row = document.getElementById("allWine");
       data.forEach((wine) => {
-        row.innerHTML = `
+        row.innerHTML += `
           <div class="col col-12 col-lg-3 col-md-4 col-sm-6">
             <div class="card">
-              <img src=${wine.imageUrl} alt="Wine-Pic" />
+              <img src="${wine.imageUrl}" alt="Wine-Pic" />
               <div class="card-body">
                 <h5 class="card-title">${wine.name}</h5>
+                <p class="card-text">${wine.brand}</p>
                 <p class="card-text">${wine.description}</p>
                 <p class="card-text">${wine.price}€</p>
-                <a href="./details.html?id=${wine.id}" class="btn btn-primary">Vai ai dettagli</a>
+                <a href="./DescriptionP.html?id=${wine._id}" class="btn btn-primary">Vai ai dettagli</a>
               </div>
             </div>
           </div>

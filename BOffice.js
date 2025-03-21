@@ -23,7 +23,11 @@ const imageUrlInput = document.getElementById("imageUrl");
 const winesURL = "https://striveschool-api.herokuapp.com/api/product/";
 
 if (wineId) {
-  fetch(winesURL + "/" + wineId)
+  fetch(winesURL + wineId, {
+    headers: {
+      Authorization: ApiKey,
+    },
+  })
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -78,6 +82,7 @@ form.addEventListener("submit", function (e) {
       if (response.ok) {
         alert("SALVATAGGIO VINO COMPLETATO!");
         form.reset();
+        location.assign("./HomeP.html");
       } else {
         throw new Error("response non OK");
       }
