@@ -30,7 +30,7 @@ const getWines = function () {
         row.innerHTML = `
           <div class="col col-12 col-lg-3 col-md-4 col-sm-6">
             <div class="card">
-              <img src=${wine.imgUrl} alt="Wine-Pic" />
+              <img src=${wine.imageUrl} alt="Wine-Pic" />
               <div class="card-body">
                 <h5 class="card-title">${wine.name}</h5>
                 <p class="card-text">${wine.description}</p>

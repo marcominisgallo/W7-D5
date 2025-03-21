@@ -2,12 +2,12 @@ const ApiKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMmE2NDM4MzRiZjAwMTUwMDA3MDIiLCJpYXQiOjE3NDI1NDc1NTYsImV4cCI6MTc0Mzc1NzE1Nn0.Qq5YAAgqKvzBcpoY_W16XAtBDEE4OG-wpiCguKXLvXc";
 
 class wineC {
-  constructor(_name, _brand, _description, _price, _imgUrl) {
+  constructor(_name, _brand, _description, _price, _imageUrl) {
     this.name = _name;
     this.brand = _brand;
     this.description = _description;
     this.price = _price;
-    this.imgUrl = _imgUrl;
+    this.imageUrl = _imageUrl;
   }
 }
 
@@ -18,7 +18,7 @@ const nameInput = document.getElementById("name");
 const brandInput = document.getElementById("brand");
 const descriptionInput = document.getElementById("description");
 const priceInput = document.getElementById("price");
-const imgUrlInput = document.getElementById("imgUrl");
+const imageUrlInput = document.getElementById("imageUrl");
 
 const winesURL = "https://striveschool-api.herokuapp.com/api/product/";
 
@@ -36,7 +36,7 @@ if (wineId) {
       brandInput.value = data.brand;
       descriptionInput.value = data.description;
       priceInput.value = data.price;
-      imgUrlInput.value = data.imgUrl;
+      imageUrlInput.value = data.imageUrl;
     })
     .catch((err) => console.log("ERRORE", err));
 }
@@ -50,7 +50,7 @@ form.addEventListener("submit", function (e) {
     brandInput.value,
     descriptionInput.value,
     priceInput.value,
-    imgUrlInput.value
+    imageUrlInput.value
   );
 
   console.log("WINE", wine);
